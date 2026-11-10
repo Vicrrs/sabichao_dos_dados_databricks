@@ -1,0 +1,23 @@
+# Databricks Apps: configuração da app Streamlit (código-fonte = raiz deste repositório).
+command:
+  - streamlit
+  - run
+  - app.py
+  - --server.port
+  - $DATABRICKS_APP_PORT
+  - --server.address
+  - 0.0.0.0
+  - --server.headless
+  - "true"
+env:
+  # Onde a configuração (as 3 IAs, warehouse, catálogos) fica salva:
+  # /Volumes/<PROJETO_CATALOGO>/<PROJETO_SCHEMA>/config/sabichao.json
+  # Dá para trocar na barra lateral da app (📁 Projeto).
+  - name: PROJETO_CATALOGO
+    value: main
+  - name: PROJETO_SCHEMA
+    value: sabichao
+  # auto = usa o token de quem está logado (user authorization) e cai para a conta de serviço se falhar
+  # app  = usa SÓ a conta de serviço da app (dê a ela permissão nos modelos, warehouse e tabelas)
+  - name: IDENTIDADE_APP
+    value: auto

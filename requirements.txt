@@ -1,0 +1,6 @@
+# Dependências da app Streamlit (o Databricks Apps instala este arquivo).
+streamlit>=1.38
+databricks-sdk>=0.60
+sqlglot>=25.0
+pandas>=2.0
+requests>=2.31

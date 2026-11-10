@@ -1,0 +1,2 @@
+# Ferramentas de desenvolvimento (não vão para a app).
+pytest>=8.0
